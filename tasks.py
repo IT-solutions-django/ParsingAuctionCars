@@ -8,13 +8,13 @@ app = Celery('tasks', broker='redis://redis:6379/0', backend='redis://redis:6379
 
 
 def run_parsers():
-    logger.info("Обработка первого сайта")
-    heydealer()
-    logger.info("Обраьотка первого сайта завершилась")
+    # logger.info("Обработка первого сайта")
+    # heydealer()
+    # logger.info("Обработка первого сайта завершилась")
 
     logger.info("Обработка второго сайта")
     sellcarauction()
-    logger.info("Обраьотка второго сайта завершилась")
+    logger.info("Обработка второго сайта завершилась")
 
 
 @app.task
@@ -27,9 +27,9 @@ def run_all_parsers():
 
 
 app.conf.beat_schedule = {
-    'run-every-day-at-21am': {
+    'run-every-day-at-23am': {
         'task': 'tasks.run_all_parsers',
-        'schedule': crontab(hour=21, minute=0),
+        'schedule': crontab(hour=23, minute=15),
     },
 }
 app.conf.timezone = 'Asia/Novosibirsk'

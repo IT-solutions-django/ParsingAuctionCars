@@ -168,7 +168,7 @@ def parse_params(data):
 
 def main():
     url = "https://www.sellcarauction.co.kr/newfront/receive/rc/receive_rc_list.do"
-    jsessionid = "E0B9DF5D0961F87E5C7B530754F53465"
+    jsessionid = "BAFE9FFA1B7FBC95AF53E80F6AE51193"
 
     page = 1
     while True:
