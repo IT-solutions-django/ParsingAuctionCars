@@ -58,7 +58,8 @@ def fetch_data_from_api(url, page, sessionid):
     try:
         headers = {
             'User-Agent': random.choice(user_agents),
-            'Cookie': f'JSESSIONID={sessionid}'
+            'Cookie': f'JSESSIONID={sessionid}',
+            'Referer': 'https://www.sellcarauction.co.kr/newfront/receive/rc/receive_rc_list.do'
         }
 
         params = {
@@ -167,7 +168,7 @@ def parse_params(data):
 
 def main():
     url = "https://www.sellcarauction.co.kr/newfront/receive/rc/receive_rc_list.do"
-    jsessionid = "CCD3859412F9D79C6356680D8CF74333"
+    jsessionid = "E0B9DF5D0961F87E5C7B530754F53465"
 
     page = 1
     while True:
